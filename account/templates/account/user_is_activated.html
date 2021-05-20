@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% block title %}Activation{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="block">
+                <p class="p1">user already activated</p><br>
+                <a class="reglink" href="{% url 'account:login' %}"><img class="heart1" src="{% static 'images/cube1.gif' %}" height="90px" width="90px"></a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

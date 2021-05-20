@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% block title %}{{ task.title }}{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <a class="playroomlink" href="{% url 'playroom:playroom' %}">playroom</a>
+        <div class="col-4">
+            <div class="block_topics">
+                <a class="dellink" href="{% url 'playroom:task_detail' pk=task.pk%}"><img class="heart1" src="{% static 'images/computer1.gif' %}" height="110px" width="110px"></a></br>
+                {% for topic in topics %}
+                    <a class="topic" href="{% url 'playroom:topic' topic.pk %}">{{ topic.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="block_tasks">
+                <p class="detail">topic: {{ task.topic }}</p>
+                <p class="detail">{{ task.title }}</p><br>
+                <p class="detail">{{ task.content }}</p><br>
+                <p class="detail">pixels: {{ task.pixels }}</p>
+                <p class="detail">difficulty: {{ task.difficulty }}</p>
+                <p class="detail">author: {{ task.author }}</p>
+                <a class="dellink" href="{% url 'playroom:task_detail' pk=task.pk%}"><img class="heart1" src="{% static 'images/light1.gif' %}" height="90px" width="90px"></a></br>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

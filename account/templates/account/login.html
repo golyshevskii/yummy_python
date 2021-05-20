@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% block title %}login{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="block">
+                {% if request.user.is_authenticated %}
+                    <a class="a1"><img class="rainbow1" src="{% static 'images/cat2.gif' %}" height="90px" width="90px"></a>
+                    <p class="p1">you are already having fun<br>{% if request.user.first_name %}{{ request.user.first_name }}{% else %}{{ request.user.username }}{% endif %}</p><br>
+                    <a class="reglink" href="{% url 'account:profile' %}"><img class="cry1" src="{% static 'images/cat1.png' %}" height="110px" width="110px"></a>
+                {% else %}
+                    {% if form.errors %}
+                        <a class="reglink" href="{% url 'account:login' %}"><img class="cry1" src="{% static 'images/cry1.gif' %}" height="120px" width="120px"></a>
+                        <p class="p1">ops...<br>username and password didnt match</p><br>
+                        <form class="form" action="{% url 'account:login' %}" method="post">
+                            <a class="form">{{ form.username.label_tag }} {{ form.username }}</a><br>
+                            <a class="form">{{ form.password.label_tag }} {{ form.password }}</a>
+                            {% csrf_token %}
+                            <input class="input" type="hidden" name="next" value="{{ next }}"/><br>
+                            <input class="input" type="submit" value="login">
+                        </form><br>
+                        <a class="forgottenlink" href="{% url 'account:password_reset' %}">forgotten your password?</a><br>
+                        <a class="reglink" href="{% url 'account:register' %}">register</a>
+                        <a class="reglink" href="{% url 'account:register' %}"><img class="rainbow1" src="{% static 'images/rainbow1.gif' %}" height="90px" width="90px"></a>
+                    {% else %}
+                        <a class="a1"><img class="rainbow1" src="{% static 'images/cat2.gif' %}" height="90px" width="90px"></a>
+                        <form class="form" action="{% url 'account:login' %}" method="post">
+                            <a class="form">{{ form.username.label_tag }} {{ form.username }}</a><br>
+                            <a class="form">{{ form.password.label_tag }} {{ form.password }}</a>
+                            {% csrf_token %}
+                            <input class="input" type="hidden" name="next" value="{{ next }}"/><br>
+                            <input class="input" type="submit" value="login">
+                        </form><br>
+                        <a class="forgottenlink" href="{% url 'account:password_reset' %}">forgotten your password?</a><br>
+                        <a class="reglink" href="{% url 'account:register' %}">register</a>
+                        <a class="reglink" href="{% url 'account:register' %}"><img class="rainbow1" src="{% static 'images/rainbow1.gif' %}" height="90px" width="90px"></a>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

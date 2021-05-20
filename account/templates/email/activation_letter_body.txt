@@ -1,0 +1,9 @@
+hi {{ user.username }},
+
+you need to complete an activation to verify your identity.
+to do this, please follow the link:
+
+{{ host }}{% url 'account:register_activate' sign=sign %}
+
+bye {{ user.username }}
+best regards, python poseur.

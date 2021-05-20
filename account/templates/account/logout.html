@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% block title %}logout{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="block">
+                <a class="a1" href="https://pointerpointer.com/" target="_blank"><img class="cry1" src="{% static 'images/cat1.png' %}" height="110px" width="110px"></a>
+                <a class="a1" href="https://pointerpointer.com/" target="_blank">out</a><br>
+                <p class="p1">you have been successfully logget out</p>
+                <a class="reglink" href="{% url 'account:login' %}">fun?</a><br>
+                <a class="reglink" href="{% url 'account:login' %}"><img class="rainbow1" src="{% static 'images/rainbow1.gif' %}" height="90px" width="90px"></a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

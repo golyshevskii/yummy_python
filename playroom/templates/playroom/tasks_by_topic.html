@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% block title %}{{ current_topic.name }}{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <a class="playroomlink" href="{% url 'playroom:playroom' %}">playroom</a>
+        <div class="col-4">
+            <div class="block_topics">
+                <a class="dellink" href="{% url 'playroom:topic' current_topic.pk %}"><img class="heart1" src="{% static 'images/computer1.gif' %}" height="110px" width="110px"></a></br>
+                <a class="currenttopic" href="{% url 'playroom:topic' current_topic.pk %}">>{{ current_topic.name }}</a>
+                {% for topic in topics %}
+                    <a class="topic" href="{% url 'playroom:topic' topic.pk %}">{{ topic.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="block_tasks">
+                <a class="dellink" href="{% url 'playroom:playroom' %}"><img class="heart1" src="{% static 'images/cat2.gif' %}" height="90px" width="90px"></a></br>
+                {% for task in topic_tasks %}
+                    <a class="task" href="{% url 'playroom:task_detail' pk=task.pk %}">{{ task.title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

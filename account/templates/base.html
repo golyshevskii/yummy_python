@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    {% load bootstrap5 %}
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="{% static 'images/heart1(32x32).png' %}" sizes="32x32">
+        <link rel="stylesheet" href="{% static 'account/base.css' %}">
+        <link rel="stylesheet" href="{% static 'account/bootstrap-grid.css' %}">
+        <title>{% block title %}python poseur{% endblock %}</title>
+    </head>
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="block_login_logout">
+              {% if request.user.is_authenticated %}
+                <a class="loglink" href="{% url 'account:logout' %}">logout?</a><br>
+                <a class="loglink" href="{% url 'yummypython:yummypython' %}"><img class="heart1" src="{% static 'images/pythonlogo1.png' %}" height="70px" width="70px"></a>
+                <a class="loglink" href="{% url 'yummypython:yummypython' %}"><img class="heart1" src="{% static 'images/snake2.png' %}" height="70px" width="70px"></a>
+              {% else %}
+                <a class="loglink" href="{% url 'account:login' %}">login</a><br>
+                <a class="loglinkgoogle" href="{% url 'social:begin' 'google-oauth2' %}"><img class="rainbow1" src="{% static 'images/google3.gif' %}" height="65px" width="150px"></a>
+              {% endif %}
+            </div>
+          </div>
+          <div class="col">
+            {% if messages %}
+              {% for message in messages %}
+                <p class="{{ message.tags }}">{{ message }} <a href="{% url 'account:profile' %}" class="{{ message.tags }}">✖</a></p>
+              {% endfor %}
+            {% endif %}
+          </div>
+          <div class="col">
+            <div class="block_user">
+              {% if request.user.is_authenticated %}
+                {% if request.user.photo %}
+                  <a href="{% url 'account:profile' %}"><img class="usericon1" src="{{ request.user.photo.url }}" height="65px" width="65px"></a>
+                {% else %}
+                  <a href="{% url 'account:profile' %}"><img class="icon1" src="{% static 'images/heart1.png' %}" height="65px" width="65px"></a>
+                {% endif %}
+                <a class="reglink" href="{% url 'account:profile' %}">
+                  {% if request.user.first_name %}
+                    {{ request.user.first_name }}
+                  {% else %}
+                    {{ request.user.username }}
+                  {% endif %}
+                </a><br>
+                <a class="pixels">0=pixels</a>
+              {% else %}
+                <a href="{% url 'account:login' %}"><img class="icon1" src="{% static 'images/heart3.gif' %}" height="65px" width="65px"></a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="menu">
+              <button onclick="myFunction()" class="menubtn">map</button>
+              <div id="mymenu" class="menu-content">
+                <a class="m1" href="{% url 'account:profile' %}">profile</a>
+                <a class="m2" href="{% url 'playroom:playroom' %}">playroom</a>
+                <a class="m2" href="{% url 'yummypython:yummypython' %}">yummypython</a>
+                <a class="m3" href="#">about</a>
+              </div>
+            </div><br>
+          </div>
+        </div>
+      </div>
+      <script>
+            function myFunction() {
+                document.getElementById("mymenu").classList.toggle("show");
+            }
+          
+            window.onclick = function(event) {
+              if (!event.target.matches('.menubtn')) {
+            
+                var dropdowns = document.getElementsByClassName("menu-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+      </script>
+      {% block content %}
+      {% endblock %}
+    </body>
+</html>

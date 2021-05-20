@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% block title %}{{ subtopic.name }}{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <a class="playroomlink" href="{% url 'yummypython:yummypython' %}">yummypython</a>
+        <div class="col-4">
+            <div class="block_topics">
+                <a class="dellink" href="{% url 'yummypython:subtopic_detail' pk=subtopic.pk %}"><img class="heart1" src="{% static 'images/computer1.gif' %}" height="110px" width="110px"></a></br>
+                <a class="currenttopic" href="{% url 'yummypython:subtopic_detail' current_subtopic.pk %}">>{{ current_subtopic.name }}</a>
+                {% for topic in topics %}
+                    <a class="topic" href="{% url 'yummypython:subtopics_by_topic' topic.pk %}">{{ topic.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="block_tasks">
+                <p class="detail">subject: {{ subtopic.topic }}</p>
+                <p class="detail">{{ subtopic.content }}</p><br>
+                <a class="dellink" href="{% url 'yummypython:subtopic_detail' pk=subtopic.pk %}"><img class="heart1" src="{% static 'images/light1.gif' %}" height="90px" width="90px"></a></br>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

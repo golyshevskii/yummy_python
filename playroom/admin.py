@@ -1,7 +1,9 @@
 # импорт моделей баз данных и пакета admin для регистрации и формирования представления полей модели
 # import of database models and the admin package to register and form the representation of the model fields
+from django.db import models
 from django.contrib import admin
 from playroom.models import Task, Topic, Difficulty, Pixel
+from martor.widgets import AdminMartorWidget
 
 
 # list_display - атрибут, задает набор выводимых в списке полей
@@ -13,6 +15,9 @@ class TaskView(admin.ModelAdmin):
     list_display = ['title', 'topic', 'difficulty', 'pixels', 'author']
     list_display_links = ['title']
     search_fields = ['title', 'topic', 'difficulty', 'pixels', 'author']
+    formfield_overrides = {
+        models.TextField: {'widget': AdminMartorWidget}
+    }
 
 
 admin.site.register(Task, TaskView)

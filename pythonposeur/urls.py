@@ -24,7 +24,7 @@ urlpatterns = [
     path('playroom/', include('playroom.urls')),        # приложение playroom; application playroom
     path('yummypython/', include('yummypython.urls')),  # приложение yummypython; application yummypython
     path('social-auth/', include('social_django.urls', namespace='social')),  # google авторизация; google authorization
-    path('markdown/', include('django_markdown.urls')),                       # язык разметки markdown
+    path('martor/', include('martor.urls')),                            # язык разметки markdown
 ]
 
 # добавление(DEBUG = True) пути к сортировке статических файлов(изображения)

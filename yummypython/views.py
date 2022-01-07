@@ -17,7 +17,7 @@ class Subtopics(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['subtopics'] = Subtopic.objects.filter(topik=context['topic_id'])
+        context['subtopics'] = Subtopic.objects.filter(topic=context['topic_id'])
         context['topics'] = Topic.objects.all()
         context['current_topic'] = Topic.objects.get(pk=context['topic_id'])
         return context
@@ -30,7 +30,7 @@ class SubtopicDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['topics'] = Topic.objects.all()
-        context['current_subtopic'] = Subtopic.objects.get(pk=context['pk'])
+        # context['current_subtopic'] = Subtopic.objects.get(pk=context['topic_id'])
         return context
 
 

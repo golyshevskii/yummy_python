@@ -1,30 +1,44 @@
 {% extends "base.html" %}
 {% load static %}
-{% load bootstrap5 %}
+{% load martortags %}
+{% block css %}
+  <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet"/>
+  <link href="{% static 'martor/css/martor.bootstrap.css' %}" type="text/css" media="all" rel="stylesheet"/>
+{% endblock %}
 {% block title %}{{ task.title }}{% endblock %}
 {% block content %}
 <div class="container">
     <div class="row">
-        <a class="playroomlink" href="{% url 'playroom:playroom' %}">playroom</a>
+        <div class="col-8">
+            <a class="playroom" href="{% url 'playroom:playroom' %}">>playroom</a>
+            <div class="martor-preview">
+                <p class="detail">>>>{{ task.title }}</p>
+                <hr/>
+                {{ task.content|safe_markdown }}
+                <p class="detail">{{ task.difficulty }}</p>
+                <a class="dellink" href="{% url 'yummypython:yummypython'%}">
+                    <img class="heart1" src="{% static 'images/light1.gif' %}" height="80px" width="80px">
+                </a></br>
+            </div>
+        </div>
         <div class="col-4">
             <div class="block_topics">
-                <a class="dellink" href="{% url 'playroom:task_detail' pk=task.pk%}"><img class="heart1" src="{% static 'images/computer1.gif' %}" height="110px" width="110px"></a></br>
+                <a class="dellink" href="{% url 'playroom:task_detail' pk=task.pk%}">
+                    <img class="heart1" src="{% static 'images/computer1.gif' %}" height="80px" width="80px">
+                </a></br>
                 {% for topic in topics %}
                     <a class="topic" href="{% url 'playroom:topic' topic.pk %}">{{ topic.name }}</a>
                 {% endfor %}
             </div>
         </div>
-        <div class="col-8">
-            <div class="block_tasks">
-                <p class="detail">topic: {{ task.topic }}</p>
-                <p class="detail">{{ task.title }}</p><br>
-                <p class="detail">{{ task.content }}</p><br>
-                <p class="detail">pixels: {{ task.pixels }}</p>
-                <p class="detail">difficulty: {{ task.difficulty }}</p>
-                <p class="detail">author: {{ task.author }}</p>
-                <a class="dellink" href="{% url 'playroom:task_detail' pk=task.pk%}"><img class="heart1" src="{% static 'images/light1.gif' %}" height="90px" width="90px"></a></br>
-            </div>
-        </div>
     </div>
 </div>
+{% endblock %}
+{% block js %}
+  <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
+  <script>
+    $('.martor-preview pre').each(function(i, block){
+        hljs.highlightBlock(block);
+    });
+  </script>
 {% endblock %}

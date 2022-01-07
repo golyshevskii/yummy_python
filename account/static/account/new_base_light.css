@@ -1,0 +1,1024 @@
+@font-face { 
+    font-family: "ElectronicHighway"; 
+    src: url("fonts/ElectronicHighway.otf");
+}
+@font-face { 
+    font-family: "Arcade"; 
+    src: url("fonts/Arcade.ttf");
+}
+@font-face { 
+    font-family: "Iceberg"; 
+    src: url("fonts/Iceberg.ttf");
+}
+@font-face { 
+    font-family: "MinecraftRegular"; 
+    src: url("fonts/MinecraftRegular.ttf");
+}
+@font-face { 
+    font-family: "SourceCodePro-Regular"; 
+    src: url("fonts/SourceCodePro-Regular.otf");
+}
+@font-face { 
+    font-family: "SpaceMono"; 
+    src: url("fonts/SpaceMono.ttf");
+}
+
+
+@keyframes moveDown{
+    from {
+      transform: translateY(-400%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+}
+@keyframes moveRight{
+    from {
+      transform: translateX(-200%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+}
+@keyframes moveLeft{
+    from {
+      transform: translateX(+50%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+}
+@keyframes moveUp{
+    from {
+      transform: translateY(+100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+}
+@-webkit-keyframes bounceIn {
+0%, 20%, 40%, 60%, 80%, 100% {
+-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+0% {
+opacity: 0;
+-webkit-transform: scale3d(.3, .3, .3);
+transform: scale3d(.3, .3, .3);
+}
+20% {
+-webkit-transform: scale3d(1.1, 1.1, 1.1);
+transform: scale3d(1.1, 1.1, 1.1);
+}
+40% {
+-webkit-transform: scale3d(.9, .9, .9);
+transform: scale3d(.9, .9, .9);
+}
+60% {
+opacity: 1;
+-webkit-transform: scale3d(1.03, 1.03, 1.03);
+transform: scale3d(1.03, 1.03, 1.03);
+}
+80% {
+-webkit-transform: scale3d(.97, .97, .97);
+transform: scale3d(.97, .97, .97);
+}
+100% {
+opacity: 1;
+-webkit-transform: scale3d(1, 1, 1);
+transform: scale3d(1, 1, 1);
+}
+}
+@keyframes bounceIn {
+0%, 20%, 40%, 60%, 80%, 100% {
+-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+0% {
+opacity: 0;
+-webkit-transform: scale3d(.3, .3, .3);
+transform: scale3d(.3, .3, .3);
+}
+20% {
+-webkit-transform: scale3d(1.1, 1.1, 1.1);
+transform: scale3d(1.1, 1.1, 1.1);
+}
+40% {
+-webkit-transform: scale3d(.9, .9, .9);
+transform: scale3d(.9, .9, .9);
+}
+60% {
+opacity: 1;
+-webkit-transform: scale3d(1.03, 1.03, 1.03);
+transform: scale3d(1.03, 1.03, 1.03);
+}
+80% {
+-webkit-transform: scale3d(.97, .97, .97);
+transform: scale3d(.97, .97, .97);
+}
+100% {
+opacity: 1;
+-webkit-transform: scale3d(1, 1, 1);
+transform: scale3d(1, 1, 1);
+}
+} 
+
+.userphoto1 {
+    object-fit: cover;
+    margin: 0;
+    z-index: 0;
+    border: 0;
+    border-radius: 120px;
+    background-size: 120px 120px;
+    height: 120px;
+    width: 120px;
+}
+.usericon1 {
+    object-fit: cover;
+    margin: 0;
+    z-index: 0;
+    border: 0;
+    border-radius: 90px;
+    background-size: 45px 45px;
+    height: 45px;
+    width: 45px;
+
+}
+.icon1 {
+    display: flex;
+    float: right;
+}
+.rainbow1 {
+    display: block;
+    margin: 0 auto; 
+}
+.cry1 {
+    display: block;
+    margin: 0 auto;
+}
+.heart1 {
+    display: inline-block;
+    margin: 0 auto; 
+}
+.spudik2 {
+    display: flex;
+    float: right;
+}
+.google1 {
+    display: block;
+    margin: 0 auto; 
+}
+
+
+.pixels {
+    font-family: "Arcade";
+    font-size: 70px;
+    color: rgb(145, 165, 255);
+    text-shadow: 1px 1px 1px rgb(230, 227, 201),
+                 2px 2px 2px rgb(78, 78, 78);
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.pixels:hover {
+    color: rgb(250, 249, 239);
+}
+.yummypython {
+    display: inline-block;
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(245, 245, 245);
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: rgb(10, 55, 255);
+}
+.yummypython:hover {
+    color: rgb(49, 49, 49);
+}
+.playroom {
+    display: inline-block;
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(245, 245, 245);
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: rgb(10, 55, 255);
+}
+.playroom:hover {
+    color: rgb(49, 49, 49);
+}
+.userlink {
+    font-family: "SpaceMono";
+    font-size: 35px;
+    color: rgb(49, 49, 49);
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.userlink:hover {
+    color: rgb(10, 55, 255);
+}
+.login1 {
+    font-family: "SpaceMono";
+    font-size: 40px;
+    color: rgb(49, 49, 49);
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.login1:hover {
+    color: rgb(10, 55, 255);
+}
+.profile {
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(245, 245, 245);
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: rgb(10, 55, 255);
+}
+.profile:hover {
+    color: rgb(49, 49, 49);
+}
+.logout1 {
+    font-family: "SpaceMono";
+    font-size: 35px;
+    color: rgb(49, 49, 49);
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.logout1:hover {
+    color: rgb(10, 55, 255);
+}
+.loglinkgoogle1 {
+    display: inline-block;
+    font-family: "Arcade";
+    font-size: 120px;
+    color: rgb(250, 249, 239);
+    text-shadow: 1px 1px 1px rgb(230, 227, 201),
+                 2px 2px 2px rgb(78, 78, 78);
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.7s;
+}
+.loglinkgoogle1:hover {
+    color: pink;
+    outline: none;
+}
+.reglink {
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(49, 49, 49);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.reglink:hover {
+    color:rgb(10, 55, 255);
+}
+.addlink {
+    font-family: "Arcade";
+    font-size: 120px;
+    color: rgb(250, 249, 239);
+    text-shadow: 1px 1px 1px rgb(230, 227, 201),
+                 2px 2px 2px rgb(78, 78, 78);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.addlink:hover {
+    color:pink;
+}
+.forgottenlink {
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(49, 49, 49);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.forgottenlink:hover {
+    color: rgb(10, 55, 255);
+}
+.passwordlink {
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(10, 55, 255);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.passwordlink:hover {
+    color: rgb(49, 49, 49);
+}
+.dellink {
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(49, 49, 49);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.dellink:hover {
+    color: rgb(10, 55, 255);
+}
+.editlink {
+    font-family: "SpaceMono";
+    font-size: 35px;
+    color: rgb(49, 49, 49);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.editlink:hover {
+    color: rgb(10, 55, 255);
+}
+.topic {
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(49, 49, 49);
+    text-decoration: none;
+    text-align: center;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: rgb(245, 253, 128);
+}
+.topic:hover {
+    color: rgb(10, 55, 255);
+}
+.currenttopic {
+    font-family: "SpaceMono";
+    font-size: 40px;
+    color: rgb(10, 55, 255);
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.currenttopic:hover {
+    color: rgb(49, 49, 49);
+}
+.task {
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(49, 49, 49);
+    text-decoration: none;
+    text-align: center;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.task:hover {
+    color: rgb(10, 55, 255);
+}
+
+
+.success {
+    font-family: "ElectronicHighway";
+    font-size: 27px;
+    color: rgb(145, 165, 255);
+    text-shadow: 1px 1px 1px rgb(230, 227, 201),
+                 2px 2px 2px rgb(78, 78, 78);
+    text-align: center;
+    text-decoration: none;
+    animation-name: moveDown;
+    animation-duration: 0.7s;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.success a:hover {
+    color: rgb(250, 249, 239);
+}
+.error {
+    font-family: "ElectronicHighway";
+    font-size: 27px;
+    color:  rgb(145, 165, 255);
+    text-shadow: 1px 1px 1px rgb(230, 227, 201),
+                 2px 2px 2px rgb(78, 78, 78);
+    text-align: center;
+    text-decoration: none;
+    animation-name: moveDown;
+    animation-duration: 0.5s;
+    cursor: pointer;
+}
+.error a:hover {
+    color: rgb(250, 249, 239);
+}
+
+
+.menu {
+    display: inline;
+}
+.menubtn {
+    font-family: "SpaceMono";
+    font-size: 50px;
+    color: rgb(49, 49, 49);
+    background-color: rgba(0, 0, 0, 0);
+    border:none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.menubtn:hover {
+    color: rgb(10, 55, 255);
+    outline: none;
+}
+.menubtn:focus {
+    outline: none;
+}
+.menu-content {
+    display: none;
+    text-align: center;
+    background-color: rgb(20, 60, 255);
+    animation-name: moveRight;
+    animation-duration: 0.5s;
+}
+.m1{
+    display: inline-block;
+    font-family: "SpaceMono";
+    font-size: 50px;
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.m1:hover, .m1:focus {
+    color: rgb(49, 49, 49);
+}
+.m2{
+    display: inline-block;
+    font-family: "SpaceMono";
+    font-size: 50px;
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.m2:hover, .m2:focus {
+    color: rgb(49, 49, 49);
+}
+.m3{
+    display: inline-block;
+    font-family: "SpaceMono";
+    font-size: 50px;
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.m3:hover, .m3:focus {
+    color: rgb(245, 253, 128);
+}
+.menulink {
+    font-family: "ElectronicHighway";
+    font-size: 100px;
+    color: rgb(250, 249, 239);
+    text-shadow: 1px 1px 1px rgb(230, 227, 201),
+                 2px 2px 2px rgb(78, 78, 78);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.menulink:active {
+    color: rgb(129, 253, 191);
+}
+.show {
+    display: inline-block;
+}
+
+
+.theme-button {
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(49,49,49);
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    text-align: center;
+}
+.theme-button:hover {
+    color: rgb(255, 240, 25);
+    outline: none;
+}
+.theme-button:focus {
+    outline: none;
+}
+
+body {
+    background-color: rgb(230, 230, 230);
+    transition: 0s;
+}
+
+
+.col {
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.col-3 {
+    animation-name: moveLeft;
+    animation-duration: 0.7s;
+}
+.col-4 {
+    animation-name: moveLeft;
+    animation-duration: 0.7s;
+}
+.col-8 {
+    animation-name: moveRight;
+    animation-duration: 0.7s;
+}
+.col-6 {
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.col-9 {
+    animation-name: moveRight;
+    animation-duration: 0.7s;
+}
+.col-12 {
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.block {
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    text-align: center;
+}
+.block_login_logout {
+    padding: 10px;
+}
+.block_task_6 {
+    padding: 60px 0px; 
+    text-align: center;
+}
+.block_user {
+    float: right;
+}
+.block_tasks {
+    padding: 10px; 
+}
+.block_topics_12 {
+    padding: 0px 400px;
+}
+.block_topics_6 {
+    padding: 0px 200px;
+}
+.block_topics_3 {
+    padding: 45px 0px;
+}
+.block_subtopics {
+    padding: 90px 0px;
+    text-align: center;
+    animation-name: moveLeft;
+}
+.block_msg_theme {
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.a1 {
+    font-family: "SpaceMono";
+    font-size: 25px;
+    color: rgb(49, 49, 49);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;        
+}
+.a1:hover {
+    color: rgb(10, 55, 255);
+}
+.p1 {
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(49, 49, 49);
+    text-align: center;
+    margin: 0px;
+}
+.detail {
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(10, 55, 255);
+    margin: 0px;
+}
+
+
+.form {
+    display: block;
+}
+fieldset {
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-image: initial;
+}
+input {
+    font-family: "SourceCodePro-Regular";
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: .4em .75em;
+    background: transparent;
+    background-color: #eee;
+    border: none;
+}
+input:hover {
+    color: rgb(10, 55, 255);
+}
+input:focus {
+    color: rgb(10, 55, 255);
+    outline: none;
+}
+.form_label {
+    font-family: "SpaceMono";
+    font-size: 25px;
+    color: rgb(49, 49, 49);
+    transition: 0.5s;
+    text-transform: lowercase;
+}
+.form_label:hover, .form_label:focus {
+    color: rgb(10, 55, 255);
+}
+.save {
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(240, 240, 240);
+    background-color: rgba(20, 60, 255);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+.save:hover {
+    color: rgb(49, 49, 49);
+    outline: none;
+}
+.save:focus {
+    outline: none;
+}
+
+
+
+.msg {
+    color: pink;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.username {
+    color: rgb(250, 249, 239);
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.chatcontent {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: auto;
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.f {
+    font-family: "SpaceMono";
+    font-size: 20px;
+    color: rgb(49, 49, 49);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;        
+}
+.f:hover {
+    color: rgb(255, 255, 255);
+}
+.n {
+    font-family: "Arcade";
+    font-size: 110px;
+    color: rgb(255, 213, 234);
+    text-shadow: 1px 1px 1px rgb(230, 227, 201),
+                 2px 2px 2px rgb(78, 78, 78);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;        
+}
+.n:hover {
+    color: rgb(255, 255, 255);
+}
+
+/*DARKPARTY*/
+
+body.dark {
+    background-color: rgb(245, 253, 128);
+    transition: 0s;
+}
+body.dark .menubtn {
+    font-family: "SpaceMono";
+    font-size: 50px;
+    color: rgb(10, 55, 255);
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+body.dark .menubtn:hover {
+    color: rgb(49, 49, 49);
+    outline: none;
+}
+body.dark .menubtn:focus {
+    outline: none;
+}
+body.dark .m1{
+    display: inline-block;
+    font-family: "SpaceMono";
+    font-size: 50px;
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+body.dark .m1:hover, .m1:focus {
+    color: rgb(255, 240, 25);
+}
+body.dark .m2{
+    display: inline-block;
+    font-family: "SpaceMono";
+    font-size: 50px;
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+body.dark .m2:hover, .m2:focus {
+    color: rgb(255, 240, 25);
+}
+body.dark .m3{
+    display: inline-block;
+    font-family: "SpaceMono";
+    font-size: 50px;
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+body.dark .m3:hover, .m3:focus {
+    color: rgb(49, 49, 49);
+}
+body.dark .theme-button {
+    font-family: "SpaceMono";
+    font-size: 35px;
+    color: rgb(10, 55, 255);
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+body.dark .theme-button:hover {
+    color: rgb(240, 240, 240);
+    outline: none;
+}
+body.dark .theme-button:focus {
+    outline: none;
+}
+body.dark .profile {
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+}
+body.dark .profile:hover {
+    color: rgb(49, 49, 49);
+}
+body.dark .login1 {
+    font-family: "SpaceMono";
+    font-size: 40px;
+    color: rgb(49, 49, 49);
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+}
+body.dark .login1:hover {
+    color: rgb(10, 55, 255);
+}
+body.dark .logout1 {
+    font-family: "SpaceMono";
+    font-size: 35px;
+    color: rgb(49, 49, 49);
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+}
+body.dark .logout1:hover {
+    color: rgb(10, 55, 255);
+}
+body.dark .loglinkgoogle1 {
+    display: inline-block;
+    font-family: "Arcade";
+    font-size: 120px;
+    color: rgb(250, 249, 239);
+    text-shadow: 1px 1px 1px rgb(230, 227, 201),
+                 2px 2px 2px rgb(78, 78, 78);
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.7s;
+}
+body.dark .loglinkgoogle1:hover {
+    color: pink;
+    outline: none;
+}
+body.dark .reglink {
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(10, 55, 255);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+body.dark .reglink:hover {
+    color:rgb(49, 49, 49);
+}
+body.dark .form {
+    display: block;
+}
+body.dark .input {
+    font-family: "SourceCodePro-Regular";
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: .4em .75em;
+    background: transparent;
+    background-color: #eee;
+    border: none;
+}
+body.dark .input:hover {
+    color: rgb(243, 253, 104);
+    outline: none;
+}
+body.dark .input:focus {
+    outline: none;
+}
+
+body.dark .yummypython {
+    display: inline-block;
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+    text-transform: lowercase;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+body.dark .yummypython:hover {
+    color: rgb(49, 49, 49);
+}
+body.dark .topic {
+    font-family: "SpaceMono";
+    font-size: 30px;
+    color: rgb(245, 245, 245);
+    text-decoration: none;
+    text-align: center;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: rgb(10, 55, 255);
+}
+body.dark .topic:hover {
+    color: rgb(49, 49, 49);
+}
+body.dark .currenttopic {
+    font-family: "SpaceMono";
+    font-size: 40px;
+    color: rgb(49, 49, 49);
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: 0.5s;
+    cursor: pointer;
+}
+body.dark .currenttopic:hover {
+    color: rgb(10, 55, 255);
+}
+
+body.dark .msg {
+    color: rgb(255, 240, 24);
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body.dark .username {
+    color: rgb(250, 249, 239);
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body.dark .col {
+    /*background-color: rgb(163, 163, 163);*/
+    /*border: solid 2px rgb(0, 0, 0);*/
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+body.dark .col-3 {
+    animation-name: moveLeft;
+    animation-duration: 0.7s;
+}
+body.dark .col-4 {
+    animation-name: moveLeft;
+    animation-duration: 0.7s;
+}
+body.dark .col-8 {
+    animation-name: moveRight;
+    animation-duration: 0.7s;
+}
+body.dark .col-9 {
+    animation-name: moveRight;
+    animation-duration: 0.7s;
+}
+body.dark .col-12 {
+    /*background-color: rgb(163, 163, 163);*/
+    /*border: solid 2px rgb(0, 0, 0);*/
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}

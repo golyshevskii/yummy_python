@@ -4,7 +4,7 @@ from django.db import models
 # импорт модели базы данных пользователя для установления связи между моделями
 # import a user database model to establish a relationship between models
 from account.models import Profile
-
+from martor.models import MartorField
 
 # default - присваивает полю значение по умолчанию, если поле явно не определено
 # on_delete - предотвращение удаления записи первичной модели, при удалении записи во вторичной модели
@@ -17,7 +17,7 @@ from account.models import Profile
 class Task(models.Model):
     topic = models.ForeignKey('Topic', on_delete=models.PROTECT, null=True)  # поле темы
     title = models.CharField(max_length=50, default=True)  # поле названия задачи
-    content = models.TextField(default=True)               # поле описания задачи
+    content = MartorField(default=True)                 # поле описания задачи
     difficulty = models.ForeignKey('Difficulty', on_delete=models.PROTECT, null=True)  # поле сложности задачи
     pixels = models.ForeignKey('Pixel', on_delete=models.PROTECT, null=True)  # поле количества балов задачи
     author = models.ForeignKey(Profile, on_delete=models.PROTECT, null=True)   # поле автора задачи

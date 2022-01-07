@@ -5,19 +5,21 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <a class="playroomlink" href="{% url 'playroom:playroom' %}">playroom</a>
-        <div class="col-4">
-            <div class="block_topics">
-                <a class="dellink" href="{% url 'playroom:topic' current_topic.pk %}"><img class="heart1" src="{% static 'images/computer1.gif' %}" height="110px" width="110px"></a></br>
-                <a class="currenttopic" href="{% url 'playroom:topic' current_topic.pk %}">>{{ current_topic.name }}</a>
+        <div class="col-6">
+            <a class="playroom" href="{% url 'playroom:playroom' %}">>playroom</a>
+            <div class="block_topics_6">
+                <a class="dellink" href="{% url 'playroom:topic' current_topic.pk %}">
+                    <img class="heart1" src="{% static 'images/computer1.gif' %}" height="80px" width="80px">
+                </a></br>
+                <a class="currenttopic" href="{% url 'playroom:topic' current_topic.pk %}">>>>{{ current_topic.name }}</a><br>
                 {% for topic in topics %}
-                    <a class="topic" href="{% url 'playroom:topic' topic.pk %}">{{ topic.name }}</a>
+                    <a class="topic" href="{% url 'playroom:topic' topic.pk %}">{{ topic.name }}</a><br>
                 {% endfor %}
             </div>
         </div>
-        <div class="col-8">
-            <div class="block_tasks">
-                <a class="dellink" href="{% url 'playroom:playroom' %}"><img class="heart1" src="{% static 'images/cat2.gif' %}" height="90px" width="90px"></a></br>
+        <div class="col-6">
+            <div class="block_task_6">
+                <a class="dellink" href="{% url 'playroom:playroom' %}"><img class="heart1" src="{% static 'images/cat2.gif' %}" height="70px" width="70px"></a><br>
                 {% for task in topic_tasks %}
                     <a class="task" href="{% url 'playroom:task_detail' pk=task.pk %}">{{ task.title }}</a>
                 {% endfor %}

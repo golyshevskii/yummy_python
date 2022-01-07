@@ -16,8 +16,22 @@
                         <a class="reglink" href="{% url 'account:login' %}"><img class="cry1" src="{% static 'images/cry1.gif' %}" height="120px" width="120px"></a>
                         <p class="p1">ops...<br>username and password didnt match</p><br>
                         <form class="form" action="{% url 'account:login' %}" method="post">
-                            <a class="form">{{ form.username.label_tag }} {{ form.username }}</a><br>
-                            <a class="form">{{ form.password.label_tag }} {{ form.password }}</a>
+                            <div class="form_username">
+                                <div class="form_label">
+                                    <label>{{ form.username.label_tag }}</label>
+                                </div>
+                                <div class="form_field">
+                                    {{ form.username }}
+                                </div>
+                            </div>
+                            <div class="form_password">
+                                <div class="form_label">
+                                    <label>{{ form.password.label_tag }}</label>
+                                </div>
+                                <div class="form_field">
+                                    {{ form.password }}
+                                </div>
+                            </div>
                             {% csrf_token %}
                             <input class="input" type="hidden" name="next" value="{{ next }}"/><br>
                             <input class="input" type="submit" value="login">
@@ -28,15 +42,29 @@
                     {% else %}
                         <a class="a1"><img class="rainbow1" src="{% static 'images/cat2.gif' %}" height="90px" width="90px"></a>
                         <form class="form" action="{% url 'account:login' %}" method="post">
-                            <a class="form">{{ form.username.label_tag }} {{ form.username }}</a><br>
-                            <a class="form">{{ form.password.label_tag }} {{ form.password }}</a>
+                            <div class="form_username">
+                                <div class="form_label">
+                                    <label>username</label>
+                                </div>
+                                <div class="form_field">
+                                    {{ form.username }}
+                                </div>
+                            </div>
+                            <div class="form_password">
+                                <div class="form_label">
+                                    <label>password</label>
+                                </div>
+                                <div class="form_field">
+                                    {{ form.password }}
+                                </div>
+                            </div>
                             {% csrf_token %}
-                            <input class="input" type="hidden" name="next" value="{{ next }}"/><br>
-                            <input class="input" type="submit" value="login">
+                            <input class="save" type="hidden" name="next" value="{{ next }}"/><br>
+                            <input class="save" type="submit" value="login">
                         </form><br>
-                        <a class="forgottenlink" href="{% url 'account:password_reset' %}">forgotten your password?</a><br>
-                        <a class="reglink" href="{% url 'account:register' %}">register</a>
-                        <a class="reglink" href="{% url 'account:register' %}"><img class="rainbow1" src="{% static 'images/rainbow1.gif' %}" height="90px" width="90px"></a>
+                        <a class="forgottenlink" href="{% url 'account:password_reset' %}">errors?</a><br><br>
+                        <a class="reglink" href="{% url 'account:register' %}">register</a><br><br><br>
+                        <a class="reglink" href="{% url 'account:register' %}"><img class="rainbow1" src="{% static 'images/rainbow1.gif' %}" height="70px" width="70px"></a>
                     {% endif %}
                 {% endif %}
             </div>

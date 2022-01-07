@@ -7,23 +7,63 @@
     <div class="row">
         <div class="col">
             <div class="block">
-                <a class="playroomlink" href="{% url 'account:edit' %}">settings</a>
+                <a class="login1" href="{% url 'account:edit' %}">settings</a><br><br><br>
                 <form class="form" action="." method="post" enctype="multipart/form-data">
-                    {% if request.user.photo %}
-                        <img class="userphoto" src="{{ request.user.photo.url }}" height="90px" width="90px"><br><br>
-                        <a class="photoform">{{ form.photo.label_tag }} <input class="chosephoto" type="file" name="{{ form.photo.name }}"></a><br><br>
-                    {% else %}
-                        <a class="photoform">{{ form.photo.label_tag }} <input class="chosephoto" type="file" name="{{ form.photo.name }}"></a><br><br>
-                    {% endif %}
-                    <a class="form">{{ form.username.label_tag }} {{ form.username }}</a><br>
-                    <a class="form">{{ form.first_name.label_tag }} {{ form.first_name }}</a><br>
-                    <a class="form">{{ form.last_name.label_tag }} {{ form.last_name }}</a><br>
-                    <a class="form">{{ form.email.label_tag }} {{ form.email }}</a><br>
+                    <div class="form_photo">
+                        {% if request.user.photo %}
+                            <img class="userphoto1" src="{{ request.user.photo.url }}" height="90px" width="90px"><br><br>
+                            <div class="form_label">
+                                <label >photo</label>
+                            </div>
+                            <div class="form_field">
+                                <input type="file" name="{{ form.photo.name }}">
+                            </div>
+                        {% else %}
+                            <div class="form_label">
+                                <label >photo</label>
+                            </div>
+                            <div class="form_field">
+                                <input type="file" name="{{ form.photo.name }}">
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="form_username">
+                        <div class="form_label">
+                            <label>username</label>
+                        </div>
+                        <div class="form_field">
+                            {{ form.username }}
+                        </div>
+                    </div>
+                    <div class="form_firstname">
+                        <div class="form_label">
+                            <label>first name</label>
+                        </div>
+                        <div class="form_field">
+                            {{ form.first_name }}
+                        </div>
+                    </div>
+                    <div class="form_lastname">
+                        <div class="form_label">
+                            <label>last name</label>
+                        </div>
+                        <div class="form_field">
+                            {{ form.last_name }}
+                        </div>
+                    </div>
+                    <div class="form_email">
+                        <div class="form_label">
+                            <label>email</label>
+                        </div>
+                        <div class="form_field">
+                            {{ form.email }}
+                        </div>
+                    </div><br><br>
                     {% csrf_token %}
-                    <input class="input" type="submit" value="save changes"><br><br>
+                    <input class="save" type="submit" value="save"><br><br>
                 </form>
-                <a class="passwordlink" href="{% url 'account:password_change' %}">change your password </a>
-                <a class="dellink" href="{% url 'account:delete_user' %}">delete account</a>
+                <a class="passwordlink" href="{% url 'account:password_change' %}">change password </a>
+                <a class="dellink" href="{% url 'account:delete_user' %}"> delete account</a>
             </div>
         </div>
     </div>

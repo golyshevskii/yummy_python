@@ -3,14 +3,14 @@
 from django.db import models
 # импорт объекта Markdown для определение содержимого поля content
 # import a Markdown object to define the content of the content field
-from django_markdown.models import MarkdownField
+from martor.models import MartorField
 
 
 # определение базы данных подтем
 # define the subtopics database
 class Subtopic(models.Model):
     name = models.CharField(max_length=50, default=True, verbose_name='subtopic')
-    content = MarkdownField(default=True)
+    content = MartorField(default=True)
     topic = models.ForeignKey('Topic', on_delete=models.PROTECT, default=True)
 
     class Meta:

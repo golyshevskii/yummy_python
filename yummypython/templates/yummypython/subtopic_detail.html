@@ -1,27 +1,40 @@
 {% extends "base.html" %}
 {% load static %}
-{% load bootstrap5 %}
+{% load martortags %}
+{% block css %}
+  <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'martor/css/martor.bootstrap.css' %}" type="text/css" media="all" rel="stylesheet" />
+{% endblock %}
 {% block title %}{{ subtopic.name }}{% endblock %}
 {% block content %}
 <div class="container">
     <div class="row">
-        <a class="playroomlink" href="{% url 'yummypython:yummypython' %}">yummypython</a>
-        <div class="col-4">
-            <div class="block_topics">
-                <a class="dellink" href="{% url 'yummypython:subtopic_detail' pk=subtopic.pk %}"><img class="heart1" src="{% static 'images/computer1.gif' %}" height="110px" width="110px"></a></br>
-                <a class="currenttopic" href="{% url 'yummypython:subtopic_detail' current_subtopic.pk %}">>{{ current_subtopic.name }}</a>
-                {% for topic in topics %}
-                    <a class="topic" href="{% url 'yummypython:subtopics_by_topic' topic.pk %}">{{ topic.name }}</a>
-                {% endfor %}
+        <div class="col-9">
+            <a class="yummypython" href="{% url 'yummypython:yummypython' %}">>yummypython</a>
+            <div class="martor-preview">
+                <p class="detail">>>>{{ subtopic.topic }}</p>
+                <hr>
+                {{ subtopic.content|safe_markdown }}
             </div>
         </div>
-        <div class="col-8">
-            <div class="block_tasks">
-                <p class="detail">subject: {{ subtopic.topic }}</p>
-                <p class="detail">{{ subtopic.content }}</p><br>
-                <a class="dellink" href="{% url 'yummypython:subtopic_detail' pk=subtopic.pk %}"><img class="heart1" src="{% static 'images/light1.gif' %}" height="90px" width="90px"></a></br>
+        <div class="col-3">
+            <div class="block_topics_3">
+                <a class="dellink" href="{% url 'yummypython:subtopic_detail' pk=subtopic.pk %}">
+                    <img class="heart1" src="{% static 'images/light1.gif' %}" height="70px" width="70px">
+                </a></br>
+                {% for topic in topics %}
+                    <a class="topic" href="{% url 'yummypython:subtopics_by_topic' topic.pk %}">{{ topic.name }}</a><br>
+                {% endfor %}
             </div>
         </div>
     </div>
 </div>
+{% endblock %}
+{% block js %}
+  <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
+  <script>
+    $('.martor-preview pre').each(function(i, block){
+        hljs.highlightBlock(block);
+    });
+  </script>
 {% endblock %}

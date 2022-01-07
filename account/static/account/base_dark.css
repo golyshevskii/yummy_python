@@ -109,14 +109,25 @@ transform: scale3d(1, 1, 1);
 
 
 .userphoto {
-    border-radius: 120px;
     object-fit: cover;
+    margin: 0;
+    z-index: 0;
+    border: 0;
+    border-radius: 120px;
+    background-size: 120px 120px;
+    height: 120px;
+    width: 120px;
 }
 .usericon1 {
-    display: flex;
-    float: right;
-    border-radius: 120px;
     object-fit: cover;
+    margin: 0;
+    z-index: 0;
+    border: 0;
+    border-radius: 120px;
+    background-size: 60px 60px;
+    height: 60px;
+    width: 60px;
+
 }
 .icon1 {
     display: flex;
@@ -151,6 +162,7 @@ transform: scale3d(1, 1, 1);
     color: rgb(250, 249, 239);
 }
 .playroomlink {
+    display: inline-block;
     font-family: "Arcade";
     font-size: 100px;
     color: rgb(250, 249, 239);
@@ -449,13 +461,13 @@ transform: scale3d(1, 1, 1);
 
 
 body {
-    background-color: rgb(245, 255, 255);
+    background-color: rgb(36, 36, 36);
 }
 
 
 .col {
-    background-color: rgb(163, 163, 163);
-    border: solid 2px rgb(0, 0, 0);
+    /*background-color: rgb(163, 163, 163);*/
+    /*border: solid 2px rgb(0, 0, 0);*/
     -webkit-animation-name: bounceIn;
     animation-name: bounceIn;
     -webkit-animation-duration: .7s;
@@ -466,8 +478,8 @@ body {
     animation-fill-mode: both;
 }
 .col-4 {
-    background-color: rgb(163, 163, 163);
-    border: solid 2px rgb(0, 0, 0);
+    /*background-color: rgb(163, 163, 163);*/
+    /*border: solid 2px rgb(0, 0, 0);*/
     -webkit-animation-name: bounceIn;
     animation-name: bounceIn;
     -webkit-animation-duration: .7s;
@@ -478,8 +490,8 @@ body {
     animation-fill-mode: both;
 }
 .col-8 {
-    background-color: rgb(163, 163, 163);
-    border: solid 2px rgb(0, 0, 0);
+    /*background-color: rgb(163, 163, 163);*/
+    /*border: solid 2px rgb(0, 0, 0);*/
     -webkit-animation-name: bounceIn;
     animation-name: bounceIn;
     -webkit-animation-duration: .7s;
@@ -490,8 +502,8 @@ body {
     animation-fill-mode: both;
 }
 .col-12 {
-    background-color: rgb(163, 163, 163);
-    border: solid 2px rgb(0, 0, 0);
+    /*background-color: rgb(163, 163, 163);*/
+    /*border: solid 2px rgb(0, 0, 0);*/
     -webkit-animation-name: bounceIn;
     animation-name: bounceIn;
     -webkit-animation-duration: .7s;
@@ -502,8 +514,8 @@ body {
     animation-fill-mode: both;
 }
 .block {
-    background-color: rgb(168, 168, 255);
-    border: solid 2px rgb(129, 253, 191);
+    /*background-color: rgb(168, 168, 255);*/
+    /*border: solid 2px rgb(129, 253, 191);*/
     padding: 10px; 
     text-align: center;
     -webkit-animation-name: bounceIn;
@@ -516,23 +528,22 @@ body {
     animation-fill-mode: both;
 }
 .block_user {
-    margin-left: auto;
-    width: 300px;
+    float: right;
 }
 .block_tasks {
-    background-color: rgb(168, 168, 255);
+    background-color: rgb(32, 32, 32);
     border: solid 2px rgb(129, 253, 191);
     padding: 10px; 
 }
 .block_topics {
-    background-color: rgb(168, 168, 255);
-    border: solid 2px rgb(129, 253, 191);
+    /*background-color: rgb(168, 168, 255);*/
+    /*border: solid 2px rgb(129, 253, 191);*/
     padding: 10px; 
     text-align: center;
 }
 .block_subtopics {
-    background-color: rgb(168, 168, 255);
-    border: solid 2px rgb(129, 253, 191);
+    /*background-color: rgb(168, 168, 255);*/
+    /*border: solid 2px rgb(129, 253, 191);*/
     padding: 10px; 
     text-align: center;
 }
@@ -561,8 +572,8 @@ body {
     margin: 0px;
 }
 .detail {
-    font-family: "Iceberg";
-    font-size: 40px;
+    font-family: "Arcade";
+    font-size: 70px;
     color: rgb(250, 249, 239);
     text-shadow: 1px 1px 1px rgb(230, 227, 201),
                  2px 2px 2px rgb(78, 78, 78);

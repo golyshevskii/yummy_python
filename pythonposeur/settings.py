@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',    # приложение cleanup для удаление ненужных файлов из базы данных
     'social_django',                        # приложение social_django для авторизации через google
     'bootstrap5',                           # приложение bootstrap для адаптированной сетки страниц веб сайта
-    'django_markdown',                      # приложение markdown для формирования содержания полей баз данных
+    'martor',                               # приложение markdown для формирования разметки
 ]
 
 # список посредников, зарегистрированных в проекте
@@ -179,3 +179,5 @@ SOCIAL_AUTH_URL_NAMESPACE = 'social'
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # использование отладочного сервера SMTP (python -m smtpd -n -c DebuggingServer localhost:1025)
 EMAIL_PORT = 1025
+
+MARTOR_THEME = 'bootstrap'
